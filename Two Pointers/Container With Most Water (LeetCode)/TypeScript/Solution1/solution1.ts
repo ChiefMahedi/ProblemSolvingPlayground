@@ -1,14 +1,9 @@
 function maxArea(height: number[]): number {
     let maxAmount = 0;
-    for(let i = 0; i<height.length; i++)
-    {
-        let leftPointer = i;
-        let rightPointer = height.length - 1; 
-        while( leftPointer < rightPointer)
-        {
-            const calculatedAmount = Math.min(height[leftPointer], height[rightPointer]) * (rightPointer - i);
+    for (let i = 0; i < height.length; i++) {
+        for (let j = i + 1; j < height.length; j++) {
+            const calculatedAmount = Math.min(height[i], height[j]) * (j - i);
             maxAmount = Math.max(maxAmount, calculatedAmount);
-            rightPointer--;
         }
     }
     return maxAmount;
