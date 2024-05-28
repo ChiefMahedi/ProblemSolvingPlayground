@@ -43,3 +43,10 @@ function climbStairs(n: number): number {
 - If none of the base cases apply and the result is not memoized, it recursively calculates the number of ways to climb to step n as the sum of the ways to climb to step n-1 and step n-2. 
 - This is based on the idea that to reach step n, one can either come from step n-1 or step n-2.
 - The result is stored in memo[n] for future reference and then returned.
+## Time Complexity:
+- Since each value from 1 to n is computed only once and stored in memo, the total number of computations is linear, i.e., O(n). 
+- Each recursive call either hits a base case, checks the memoization array, or makes two further recursive calls which also check the memoization array. 
+- This results in a linear amount of work due to the memoization.
+### Space Complexity:
+- The memo array is of size n+1 to store results for all values from 0 to n.
+- Therefore, the space complexity is dominated by the size of the memo array, which is O(n).
